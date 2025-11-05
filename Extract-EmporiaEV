@@ -1,0 +1,50 @@
+#!/bin/bash
+
+echo -n """
+
+1. Connect to Emproia EV charger using UART. 
+
+Pin layout: 
+• H5 - Serial RX
+• H7 - Serial TX
+• H8 - Ground
+• H10 - GPIO 0
+− Pull to ground to enable ESP32 tools
+
+Blog: https://static1.squarespace.com/static/5f3c7479f4b3c702571a047d/t/66339695088846239efccb12/1714656926623/CSW24-Pwn2Own-Automotive-2024-Jonathan-Andersson.pdf
+
+
+2. Flash the firmware, using esptool. (installed using python3 virtual environment + pip3 install esptool). 
+
+Once installed, we can now flash with,
+
+esptool -b 460800 --before default_reset --after hard_reset --chip esp32 write_flash --flash_mode dio --flash_size 8MB --flash_freq 40m 0x0 "evcharger8meg - Orig.bin"
+
+2. Connect to the ev charger serial interface. 
+
+picocom -b /dev/ttyUSB0 125000
+eto yung mga ginamit na command kahapon mga pre sa Emporia ev charger.
+
+1. Connect to Emproia EV charger using UART. 
+
+Pin layout: 
+• H5 - Serial RX
+• H7 - Serial TX
+• H8 - Ground
+• H10 - GPIO 0
+− Pull to ground to enable ESP32 tools
+
+Blog: https://static1.squarespace.com/static/5f3c7479f4b3c702571a047d/t/66339695088846239efccb12/1714656926623/CSW24-Pwn2Own-Automotive-2024-Jonathan-Andersson.pdf
+
+
+2. Flash the firmware, using esptool. (installed using python3 virtual environment + pip3 install esptool). 
+
+Once installed, we can now flash with,
+
+esptool -b 460800 --before default_reset --after hard_reset --chip esp32 write_flash --flash_mode dio --flash_size 8MB --flash_freq 40m 0x0 "evcharger8meg - Orig.bin"
+
+2. Connect to the ev charger serial interface. 
+
+picocom -b /dev/ttyUSB0 125000
+
+"""

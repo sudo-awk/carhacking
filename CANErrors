@@ -1,0 +1,23 @@
+#!/bin/bash
+
+echo """
+{+} Common UDS error
+
+0x10 - General reject
+0x11 - Service not supported
+0x12 - Sub-function not supported
+0x13 - Incorrect message length or invalid format
+0x22 - Conditions not correct
+0x24 - Request Sequence Error
+0x31 - Request out of range
+0x33 - Security access denied
+0x35 - Invalid key
+0x36 - Exceeded number of attempts
+0x37 - Required time delay not expired
+0x78 - Response pending
+0x7F - Service not supported in active session
+0x81 - RPM too high
+0x85 - Voltage out of range
+
+Before sending 0x22 ReadDataByIdentifier, make sure to enter the correct diagnostic session using service 0x10 (e.g., 0x10 03 for extended session).
+"""

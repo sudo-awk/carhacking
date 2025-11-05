@@ -1,0 +1,18 @@
+#!/usr/bin/bash
+# Bring down and clean up CAN/vCAN interfaces safely
+
+# Handle virtual CAN (safe to delete)
+if ip link show vcan0 &>/dev/null; then
+    echo "[*] Removing vcan0..."
+    sudo ip link set vcan0 down
+    sudo ip link delete vcan0
+fi
+
+# Handle hardware CAN (do not delete, only down)
+if ip link show can0 &>/dev/null; then
+    echo "[*] Bringing down can0..."
+    sudo ip link set can0 down
+fi
+
+echo "[*] Done. CAN interfaces cleaned up."
+

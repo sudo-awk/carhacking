@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo """
+{+} picocom -b 115200 /dev/ttyUSB0
+{+} //note ttyUSB0 may vary, double check using sudo dmesg
+"""
+

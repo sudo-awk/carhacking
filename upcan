@@ -1,0 +1,13 @@
+#!/usr/bin/bash
+
+
+echo """
+{+} for peugeot cluster set bitrate to 125000
+{+} for mazda cluster set bitrate 500000 
+
+sudo ip link set can0 type can bitrate 500000
+sudo ip link set can0 up
+sudo ifconfig can0 txqueuelen 10000
+sudo ip link set dev can0 txqueuelen 10000
+"""
+
